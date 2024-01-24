@@ -1,7 +1,8 @@
 import './App.css';
-import {useRef, useState} from "react";
+import {useContext, useRef, useState} from "react";
 import List from "./Components/List";
 import { v4 as uuidv4 } from 'uuid';
+import {ThemeContext} from "./context/ThemeContext";
 
 
 function App() {
@@ -19,9 +20,14 @@ function App() {
         }
     }
 
+    const {isDark, toggleTheme} = useContext(ThemeContext);
+
     return (
-        <div className='App'>
-            <h2>App</h2>
+        <div className={`App ${isDark ? 'dark' : 'light'}`}>
+            <div className={`header`}>
+                <h2>App</h2>
+                <button onClick={toggleTheme}>{isDark ? 'Light' : 'Dark'} theme</button>
+            </div>
             <div>
                 <input ref={textInput} value={text} onChange={handleChangeText} onKeyDown={handleKeyDown}/>
             </div>

@@ -1,9 +1,39 @@
-html {
-    background-color: #1e1f22;
+#root {
+    height: 100vh;
+}
+
+body {
+   min-height: 100vh;
+    background-size: cover;
+}
+
+.dark {
+    background-color: #3e3e3e;
     color: white;
 }
 
+.light {
+    background-color: #f0f2ef;
+    color: #1e1f22;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header button {
+    height: 40px;
+}
+
+button {
+    cursor: pointer;
+    padding: 5px;
+}
+
 .App {
+    min-height: 100vh;
     padding: 20px;
 }
 
